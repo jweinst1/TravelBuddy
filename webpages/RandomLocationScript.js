@@ -16,19 +16,5 @@ var RandLocation = function() {
 };
 
 
-var ReverseGeoCodeJSON = function(latlng) {
-    var Rgeocoder = new google.maps.Geocoder;
-    geocoder.geocode({'location': latlng}, function(results, status) {
-        if (status === google.maps.GeocoderStatus.OK) {
-            if (results[1]) {
-                return results[1].formatted_address;
-            } else {
-                window.alert('No results found');
-            }
-        } else {
-            window.alert('Geocoder failed due to: ' + status);
-        }
-    });
-};
 
 

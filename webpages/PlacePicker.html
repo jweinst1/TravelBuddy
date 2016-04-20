@@ -72,8 +72,18 @@
     // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
     function initAutocomplete() {
+        function RandFloat(start, end) {
+            return (Math.random() * end) + start;
+        }
+
+
+
+        var RandLocation = function() {
+            this.lat = RandFloat(-90, 90);
+            this.lng = RandFloat(-180, 180);
+        };
         var map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: -33.8688, lng: 151.2195},
+            center: new RandLocation(),
             zoom: 13,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         });
