@@ -59,11 +59,11 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png"
-            class="img-responsive">
+            <%= link_to image_tag("paris.jpg", :border => 0), {:action => 'show', :controller => "trips"} %>
             <h2><%= t.name %></h2>
             Start Date: <p><%= t.start%>></p>
             End Date: <p><%= t.end%>></p>
+            <%= link_to 'Delete trip', trip_path(t.id), method: :delete %>
           </div>
         </div>
       </div>  
