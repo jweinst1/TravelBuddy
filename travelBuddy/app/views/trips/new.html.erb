@@ -47,6 +47,7 @@
                 </div>
             </div>
         </div>
+        <!--
         <div class="section">
             <div class="container">
                 <div class="row">
@@ -65,6 +66,13 @@
                 </div>
             </div>
         </div>
+    -->
+        <%= form_for @trip do |f| %>
+            Trip Name: <%= f.text_field :name %></br>
+            Start Date: <%= f.text_field :start %></br>
+            End Date: <%= f.text_field :end %></br>
+            <%= f.submit %>
+        <%end%>
         <div class="section">
             <div class="container">
                 <iframe id="cv_if5" src="http://cdn.instantcal.com/cvir.html?id=cv_nav5&amp;file=http%3A%2F%2Fwww.instantcal.com%2Ftest.ics&amp;theme=XRE&amp;ccolor=%23ffffc0&amp;dims=1&amp;gtype=cv_monthgrid&amp;gcloseable=0&amp;gnavigable=1&amp;gperiod=month&amp;itype=cv_simpleevent" allowtransparency="true" scrolling="no" frameborder="0" height="600" width="800"></iframe>
@@ -118,6 +126,6 @@
                 </div>
             </div>
         </div>
-    
+        
 
 </body></html>
