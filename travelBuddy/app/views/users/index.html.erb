@@ -5,6 +5,8 @@
     <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="trips.css.css">
+    
   </head><body>
     <div class="navbar navbar-default navbar-static-top">
       <div class="container">
@@ -15,21 +17,17 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><span>TravelBuddy</span></a>
+          <a class="navbar-brand"><span>TravelBuddy</span></a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-ex-collapse">
           <ul class="nav navbar-nav navbar-right">
             <li class="active">
-              <a href="#">Home</a>
             </li>
             <li>
-              <a href="#">Contacts</a>
+              <%= link_to 'Home', root_path %>
             </li>
             <li>
-              <a href="#">Profile</a>
-            </li>
-            <li>
-              <a href="#">Trips</a>
+              <%= link_to 'Trips', trips_path %>
             </li>
           </ul>
         </div>
