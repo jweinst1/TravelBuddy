@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :authenticate_user!
   
   def index
     @users = User.all 
@@ -26,4 +27,8 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name) 
   end
+
+  """def authenticate
+    redirect_to(root_path) unless current_user.nil?
+  end"""
 end
