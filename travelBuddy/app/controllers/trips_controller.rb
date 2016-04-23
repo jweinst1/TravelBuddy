@@ -1,5 +1,5 @@
 class TripsController < ApplicationController
-
+  before_action :authenticate_user!, only: [:index]
   def index
     @trips = Trip.all 
   end
@@ -32,6 +32,15 @@ class TripsController < ApplicationController
 
   def trip_params
     params.require(:trip).permit(:name, :start, :end) 
+  end
+
+  protected 
+  def authenticate_user!
+    if user_signed_in?
+      redirect_to trips_path
+    else 
+      redirect_to user_session_path
+    end
   end
 
 end
