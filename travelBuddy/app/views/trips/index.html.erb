@@ -63,6 +63,10 @@
             <h2><%= t.name %></h2>
             Start Date: <p><%= t.start%>></p>
             End Date: <p><%= t.end%>></p>
+            <%= link_to 'Add new location', :controller => "locations", :action => "new", :id => t.id%>
+            <%= t.locations.each do |l|%>
+              <p><%=l.name%> </p>
+            <% end %>
             <%= link_to 'Delete trip', trip_path(t.id), method: :delete %>
           </div>
         </div>

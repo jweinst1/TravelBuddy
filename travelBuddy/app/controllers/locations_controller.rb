@@ -1,5 +1,6 @@
 class LocationsController < ApplicationController
-
+  require 'uri'
+  require 'CGI'
   
   def index
   	@locations = Location.all
@@ -14,9 +15,11 @@ end
   end
 
   def create
-  	@location = @trip.locations.create(location_params)
+    @location = Location.new
+    #@trip = Trip.find(params[:id])
+    #@location.trip = @trip
     if @location.save 
-      redirect_to url_for(:controller => :trips, :action => :new)
+      redirect_to url_for(:controller => :trips, :action => :index)
     else
       render "new" 
     end
@@ -29,7 +32,7 @@ end
   def destroy
     @location.destroy
   end
-  
+
   private
 
   def location_params

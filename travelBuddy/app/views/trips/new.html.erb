@@ -94,7 +94,6 @@
         </div>
 <div class="row">
     <div>
-    <%= link_to "Add New Location", :controller => :locations, :action => :new%>
         <%= form_for @trip do |f| %>
             Trip Name: <%= f.text_field :name %></br>
             Start Date: <%= f.text_field :start %></br>
