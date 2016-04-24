@@ -111,8 +111,8 @@
         
         
                 var RandLocation = function() {
-                    this.lat = RandFloat(-90, 90);
-                    this.lng = RandFloat(-180, 180);
+                    this.lat = RandFloat(36, 40);
+                    this.lng = RandFloat(120, 123);
                 };
                 var map = new google.maps.Map(document.getElementById('map'), {
                     center: new RandLocation(),
