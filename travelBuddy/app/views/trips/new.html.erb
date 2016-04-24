@@ -38,53 +38,19 @@
                 </div>
             </div>
         </div>
-        <div class="section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <img class="img-responsive" src="http://maps.googleapis.com/maps/api/staticmap?center=Tombouctou,Mali&amp;zoom=12&amp;size=200x200&amp;sensor=false">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--
-        <div class="section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <form class="form-horizontal" role="form">
-                            <div class="form-group">
-                                <div class="col-sm-2">
-                                    <label for="inputEmail3" class="control-label">Date</label>
-                                </div>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail3" placeholder="Date">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    -->
+
+        <%= link_to "Add new locations to trip", :controller => "locations", :action => "new" %>
+
         <%= form_for @trip do |f| %>
             Trip Name: <%= f.text_field :name %></br>
             Start Date: <%= f.text_field :start %></br>
             End Date: <%= f.text_field :end %></br>
+            <%= button_to "Add a new location", locations_path, :method => "new" %>
             <%= f.submit %>
         <%end%>
+
         <div class="section">
             <div class="container">
-                <iframe id="cv_if5" src="http://cdn.instantcal.com/cvir.html?id=cv_nav5&amp;file=http%3A%2F%2Fwww.instantcal.com%2Ftest.ics&amp;theme=XRE&amp;ccolor=%23ffffc0&amp;dims=1&amp;gtype=cv_monthgrid&amp;gcloseable=0&amp;gnavigable=1&amp;gperiod=month&amp;itype=cv_simpleevent" allowtransparency="true" scrolling="no" frameborder="0" height="600" width="800"></iframe>
-            </div>
-        </div>
-        <div class="section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <a class="btn btn-lg btn-primary">Submit Location and Time</a>
-                    </div>
-                </div>
                 <div class="section">
                     <div class="container">
                         <div class="row">
@@ -120,15 +86,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="section">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <a class="btn btn-block btn-lg btn-primary"><span class="badge"></span><i class="fa fa-star fa-fw"></i>Finish Trip!</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
         

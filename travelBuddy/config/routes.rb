@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "locations", to: "locations#index"
 
   resources :trips
-
+  resources :locations
   devise_for :users
   root to: "home#index"
 end
