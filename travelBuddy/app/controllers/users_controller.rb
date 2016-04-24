@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!
+  #before_filter :authenticate_user!
+  #before_action :authenticate_user!, only: [:index]
   
   def index
     @users = User.all 
@@ -31,4 +32,12 @@ class UsersController < ApplicationController
   """def authenticate
     redirect_to(root_path) unless current_user.nil?
   end"""
+  # protected 
+  # def authenticate_user!
+  #   if user_signed_in?
+  #     redirect_to trips_path
+  #   else 
+  #     redirect_to user_session_path
+  #   end
+  # end
 end
