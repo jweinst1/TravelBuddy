@@ -4,7 +4,11 @@ class LocationsController < ApplicationController
   end
 
   def new
-  	@location = Location.new 
+  	@location = Location.new
+    @hash = Gmaps4rails.build_markers(@users) do |user, marker|
+      marker.lat user.latitude
+      marker.lng user.longitude
+end
   end
 
   def create
@@ -18,6 +22,12 @@ class LocationsController < ApplicationController
 
   def show
   	@location = Location.find(params[:id])
+  end
+
+  private
+
+  def location_params
+    params.require(:location).permit(:name)
   end
 
 end
