@@ -26,18 +26,10 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name) 
+    params.require(:user).permit(:name, :email) 
   end
 
   """def authenticate
     redirect_to(root_path) unless current_user.nil?
   end"""
-  # protected 
-  # def authenticate_user!
-  #   if user_signed_in?
-  #     redirect_to trips_path
-  #   else 
-  #     redirect_to user_session_path
-  #   end
-  # end
 end
