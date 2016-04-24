@@ -1,4 +1,6 @@
 class LocationsController < ApplicationController
+
+  
   def index
   	@locations = Location.all
   end
@@ -12,9 +14,9 @@ end
   end
 
   def create
-  	@location = Location.create(location_params)
+  	@location = @trip.locations.create(location_params)
     if @location.save 
-      redirect_to @trip
+      redirect_to url_for(:controller => :trips, :action => :new)
     else
       render "new" 
     end
@@ -24,10 +26,18 @@ end
   	@location = Location.find(params[:id])
   end
 
+  def destroy
+    @location.destroy
+  end
+  
   private
 
   def location_params
     params.require(:location).permit(:name)
+  end
+
+  def all_locations
+    @locations = Task.all
   end
 
 end
