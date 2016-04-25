@@ -92,6 +92,19 @@
         </div>
       </div>
     </div>
+
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <%= form_for @location do |l| %>
+            Location Name: <%= l.text_field :name %></br>
+            <%= l.submit%>
+            <%end%>
+          </div>
+        </div>
+      </div>
+    </div>
   <input id="pac-input" class="controls" type="text" placeholder="Search Box">
         <div id="map"></div>
         <script>

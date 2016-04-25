@@ -92,17 +92,15 @@
                 </div>
             </div>
         </div>
-
-        <%= link_to "Add new locations to trip", :controller => "locations", :action => "new" %>
-
+<div class="row">
+    <div>
         <%= form_for @trip do |f| %>
             Trip Name: <%= f.text_field :name %></br>
             Start Date: <%= f.text_field :start %></br>
             End Date: <%= f.text_field :end %></br>
-            <%= button_to "Add a new location", locations_path, :method => "new" %>
             <%= f.submit %>
         <%end%>
-
+    </div>
         <div class="section">
             <div class="container">
                 <div class="section">

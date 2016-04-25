@@ -11,13 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421005856) do
+ActiveRecord::Schema.define(version: 20160424211200) do
 
   create_table "locations", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "trip_id"
   end
+
+  add_index "locations", ["trip_id"], name: "index_locations_on_trip_id"
 
   create_table "trips", force: true do |t|
     t.string   "name"
